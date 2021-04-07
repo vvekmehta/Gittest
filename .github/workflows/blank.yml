@@ -18,16 +18,16 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-- name: Azure Login
-  run: |
+ - name: Azure Login
+   run: |
      az cloud set -n AzureUSGovernment
      az login --identity -u ${{ secrets.RUNNER_IDENTITY }}
      az account set -s ${{ env.ARM_SUBSCRIPTION_ID }}
-  plan:
-  - name: Plan
+   plan:
+   - name: Plan
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Pull Secrets
         id: azsecrets
@@ -63,7 +63,7 @@ jobs:
         shell: bash
         with: 
 
-  tests:
+   tests:
     runs-on: [self-hosted]
     strategy:
       matrix: 

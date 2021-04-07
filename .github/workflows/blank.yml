@@ -84,6 +84,7 @@ jobs:
         update-ca-trust extract
     - name: Install pyenv
 # Messing around with these directories is done to account for the first run use case and because git clone will fail if a directory exists
+    - uses: actions/checkout@v2
     - name: Install python version
       uses: gabrielfalcao/pyenv-action@v5
       with:

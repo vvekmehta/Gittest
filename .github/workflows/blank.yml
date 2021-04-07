@@ -1,5 +1,4 @@
 # Workflow to assign libraries
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -84,6 +83,7 @@ jobs:
         update-ca-trust extract
     - name: Install pyenv
 # Messing around with these directories is done to account for the first run use case and because git clone will fail if a directory exists
+    - uses: actions/checkout@v2
     - name: Install python version
       uses: gabrielfalcao/pyenv-action@v5
       with:

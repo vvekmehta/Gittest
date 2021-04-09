@@ -9,7 +9,7 @@ on:
     branches: [ MPR-DP-CI-BED-5216-pyenv-testing ]
   pull_request:
     branches: [ MPR-DP-CI-BED-5216-pyenv-testing ]
-
+    
 env: 
   PYENV_ROOT: /opt/python/versions
   PYENV_HOME: /opt/python/pyenv
